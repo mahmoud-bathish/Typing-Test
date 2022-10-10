@@ -79,11 +79,12 @@ function genWords() {
         upcomingWords.appendChild(div);
     }
     //start play function
+
     startPlay();
 }
 
 function startPlay() {
-    timeLeftSpan = defaultLevelSeconds;
+    timeLeftSpan.innerHTML = defaultLevelSeconds;
     let start = setInterval(() => {
         timeLeftSpan.innerHTML--;
         if (timeLeftSpan.innerHTML == 0) {
@@ -97,7 +98,7 @@ function startPlay() {
                     let span = document.createElement("span");
                     span.className = 'good';
                     let spanText = document.createTextNode("Congratz");
-                    finishMessage.appendChild(span);
+                    finishMessage.appendChild(spanText);
                     upcomingWords.remove();
                 }
 
